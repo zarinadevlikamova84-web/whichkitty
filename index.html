@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Какой ты котик?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="paw-container"></div>
+    <main>
+        <!--Главная страница-->
+        <section id="start-screen">
+            <h1>Какой ты котик?</h1>
+            <p>Ответь на 10 вопросов и узный, какой ты котик!</p>
+            <button id="start-button">Начать тест</button>
+        </section>
+        <!--Страница с вопросами-->
+        <section id="quiz-screen" hidden>
+            <p id="progress">Вопрос 1 из 10</p>
+            <h2 id="question">Здесь будет вопрос</h2>
+            <div id="answers">
+            </div>
+
+            <button id="next-button" hidden>Далее</button>
+        </section>
+        <!--Страница результата-->
+        <section id="result-screen" hidden>
+            <h2>Твой результат</h2>
+
+            <img id="cat-image" src="" alt="Твой котик">
+            <h3 id="cat-name">Имя котика</h3>
+            <p id="cat-description">Описание котика</p>
+            <button id="restart-button">Пройти еще раз</button>
+        </section>
+    </main>
+<script src="script.js"></script>
+</body>
+</html>

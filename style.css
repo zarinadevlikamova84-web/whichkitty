@@ -1,0 +1,199 @@
+/* Основные настройки страницы */
+body {
+    background-color: #fce8ef;
+    font-family: Arial, sans-serif;
+    color: #a96f83;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Главная карточка */
+main {
+    background-color: #fff9f5;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+
+}
+/* Главный заголовок */
+h1 {
+    color: #c77d9b;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+/* Заголовки вопросов и результатов */
+h2, h3 {
+    color: #a96f83;
+}
+/* Обычный текст */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+/* Кнопки */
+button {
+    background-color: #efb8ca;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0,3s;
+}
+/* Эффект при наведении */
+button:hover {
+    background-color: #d995af;
+    transform: scale(1.05);
+}
+/* Нажатая или недоступная кнопка */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+/* Варианты ответов */
+#answers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 25px 0;
+}
+/* Кнопки с ответами */
+#answers button {
+    width: 100%;
+}
+/* Картинка котика в результате */
+#cat-image {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+/* Индикатор прогресса */
+#progress {
+    display: inline-block;
+    background-color: #fce8ef;
+    color: #c77d9b;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+/* Декор страницы */
+body::before {
+    content: "🐾 ✦";
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+}
+body::after {
+    content: "✧ 🐾";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 28px;
+}
+/* Легкая анимация карточки */
+main {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(169, 111, 131, 0.15);
+}
+/* Выбранный ответ */
+#answers button.selected {
+    background-color: #c77d9b;
+    color: white;
+    transform: scale(1.02);
+}
+/* Версия для телефона */
+@media (max-width: 600px) {
+    main {
+        width: 92%;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+    h2 {
+        font-size: 21px;
+    }
+    #cat-image {
+        max-width: 230px;
+    }
+    body::before,
+    body::after {
+        font-size: 20px;
+        position: relative;
+z-index: 1;
+    }
+}
+/* Анимация кошачьих следов */
+.paw {
+    position: absolute;
+    font-size: 25px;
+    opacity: 0;
+    animation: paw-appear 4s ease-in-out forwards;
+}
+@keyframes paw-appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    20% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+/* Слой для кошачьих следов */
+#paw-container {
+position: fixed;
+inset: 0;
+pointer-events: none;
+overflow: hidden;
+z-index: 0;
+}
+
+/* Сами лапки */
+.paw {
+position: absolute;
+font-size: 25px;
+opacity: 0;
+animation: paw-appear 4s ease-in-out forwards;
+}
+
+@keyframes paw-appear {
+0% {
+opacity: 0;
+transform: scale(0.5);
+}
+20%, 80% {
+    opacity: 0.7;
+}
+
+100% {
+    opacity: 0;
+    transform: scale(1.2);
+}
+}
